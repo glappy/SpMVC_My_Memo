@@ -10,6 +10,6 @@
 </head>
 <body>
 <h1>내 홈페이지</h1>
-
+<%@ include file="/WEB-INF/views/memo_write.jsp" %>
 </body>
 </html>
