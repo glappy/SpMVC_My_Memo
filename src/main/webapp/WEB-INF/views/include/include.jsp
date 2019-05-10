@@ -38,8 +38,8 @@
 <body>
 	<header>나의 메모장</header>
 	<nav>
-		<a href="/tele/memo_write" id="nav1">메모쓰기</a> 
-		<a href="/tele/memo_list" id="nav2">리스트보기</a>
+		<a href="/tele/memo_write" id="nav1">메모장</a> 
+		<a href="/tele/memo_list" id="nav2">메모리스트</a>
 	</nav>
 
 </body>

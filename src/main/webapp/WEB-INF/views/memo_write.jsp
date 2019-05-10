@@ -57,6 +57,8 @@
 	
 		<label for="m_photo" class="label">사진</label> 
 		<input type="text" name="m_photo" id="m_photo" ><br />
+		
+		<button type="submit" onclick="">저장</button>
 	</fieldset>
 </body>
 </html>
