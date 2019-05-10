@@ -57,4 +57,8 @@ public class WriteController {
 	public String memo_write() {
 		return "memo_write";
 	}
+	@RequestMapping(value="/memo_list", method=RequestMethod.GET)
+	public String memo_list() {
+		return "memo_list";
+	}
 }
