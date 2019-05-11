@@ -36,7 +36,7 @@
 </style>
 </head>
 <body>
-	<form method="GET">
+	<form action="/memo_list" method="POST">
 	<fieldset> 
 		<legend>메모작성</legend>
 		
@@ -53,12 +53,13 @@
 		<input type="text" name="m_subject" id="m_subject" ><br />
 	
 		<label for="m_text" class="label">내용</label> 
-		<input type="textarea" name="m_text" id="m_text" ><br />
+		<textarea rows="5" style="width:100%"></textarea>
 	
 		<label for="m_photo" class="label">사진</label> 
 		<input type="text" name="m_photo" id="m_photo" ><br />
 		
 		<button type="submit" onclick="">저장</button>
 	</fieldset>
+	</form>
 </body>
 </html>
