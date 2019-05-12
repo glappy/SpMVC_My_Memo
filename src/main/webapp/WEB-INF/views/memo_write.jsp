@@ -34,6 +34,11 @@
 		font-size:1.2rem;
 	}
 </style>
+<script>
+function save(){
+	location.replace("/tele/memo_list");
+}
+</script>
 </head>
 <body>
 	<form action="/memo_list" method="POST">
@@ -58,7 +63,7 @@
 		<label for="m_photo" class="label">사진</label> 
 		<input type="text" name="m_photo" id="m_photo" ><br />
 		
-		<button type="submit" onclick="">저장</button>
+		<button type="submit" onclick="save">저장</button>
 	</fieldset>
 	</form>
 </body>
