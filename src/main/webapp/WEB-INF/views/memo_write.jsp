@@ -35,13 +35,22 @@
 	}
 </style>
 <script>
-function save(){
-	location.replace("/tele/memo_list");
-}
 </script>
 </head>
 <body>
-	<form action="/memo_list" method="POST">
+	<form action="/tele/memo_list" method="POST">
+	<!-- 위 코드는 일단 input에 입력된 정보들을 보내기 위한 것 같은데... 보내서 insert하려는 것 같습니다.
+	post로 하는 이유는...주소창에 일일이 다 쓰기도 힘들고 생년월일이나 비밀번호 같은 것을 보호하기 위한 것 아닐까요
+	post는 최소한의 보안이 보장되니까요
+	입력 항목이 많을 때는 post가 데이터 크기의 제한이 없으니까 그런가 봅니다.
+	그런데 사실 action은 잘 모르겠습니다.
+	action이 경로를 연결해 주는 것이라고는 하는데 이걸 memo_list에 보내는 것이 맞는지 
+	controller에 보내야 하는 것이었는지는 모르겠어요. 
+	
+	form tag는 input에 있는 정보들을 전달할 때 쓰는 코드라고 합니다.
+	jsp파일에서도 '키워드'라는 말을 쓰나요?
+	'action 속성은 입력받은 데이터를 처리할 서버 상의 스크립트 파일의 주소를 명시합니다.'라고 되어 있네요
+	보니깐 다른 사람들은 get도 쓰는 것 같더라고요-->
 	<fieldset> 
 		<legend>메모작성</legend>
 		
@@ -63,7 +72,14 @@ function save(){
 		<label for="m_photo" class="label">사진</label> 
 		<input type="text" name="m_photo" id="m_photo" ><br />
 		
-		<button type="submit" onclick="save">저장</button>
+		<button type="submit" >저장</button>
+		<!--  일단..button을 만들었는데 사용자가 클릭만하면 컴퓨터는 뭘 어쩌라는 건지 모르겠죠?
+		a href=""과 같은 상태인 거죠.
+		제 생각에 그래서 type을 넣는 것 같은데요. 
+		"이 버튼은 어떤 정보를 제출(submit)하기 위한 것이야 어디로 제출해서 어떤 일을 하는지 모를겠지?
+		내가 클릭 했을 시(onclick) 무슨 일을 할지 js에 상세한 내용을 적어놓을 것이니깐
+		js를 뒤지다가 "save"라는 말이 나오면 거기서 시키는 대로 해"인 것 같습니다.-->
+		
 	</fieldset>
 	</form>
 </body>
