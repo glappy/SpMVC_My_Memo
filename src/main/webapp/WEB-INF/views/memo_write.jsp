@@ -55,7 +55,7 @@
 		<input type="text" name="m_subject" id="m_subject"><br />
 	
 		<label for="m_text" class="label">내용</label> 
-		<textarea rows="5" style="width:100%"></textarea>
+		<textarea rows="5" style="width:100%" type="text" name="m_text"></textarea>
 	
 		<label for="m_photo" class="label">사진</label> 
 		<input type="text" name="m_photo" id="m_photo"><br />

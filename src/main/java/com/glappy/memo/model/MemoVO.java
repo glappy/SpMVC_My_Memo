@@ -19,4 +19,4 @@ public class MemoVO {
 	private String m_subject;
 	private String m_text;
 	private String m_photo;
-	}
+}
