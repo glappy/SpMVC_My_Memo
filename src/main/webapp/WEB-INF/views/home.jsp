@@ -32,7 +32,7 @@
 <body>
 	<nav>
 		<a href="/tele/memo_write" id="nav1">메모장</a> 
-		<a href="/tele/memo_list" id="nav2">메모리스트</a>
+		<a href="/tele/memo_list" id="nav2">메모보기</a>
 	</nav>
 	<h1>원하는 메뉴를 클릭하세요</h1>
 </body>

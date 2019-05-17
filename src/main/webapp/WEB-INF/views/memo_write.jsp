@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ include file="/WEB-INF/views/include/include.jsp" %>
 
 <!DOCTYPE html>
@@ -38,7 +37,7 @@
 </script>
 </head>
 <body>
-	<form action="/tele/memo_list" method="POST">
+	<form action="/tele/memo_view" method="POST">
 	<fieldset> 
 		<legend>메모작성</legend>
 		
@@ -49,7 +48,7 @@
 		<input type="text" name="m_auth" id="m_auth"><br />
 	
 		<label for="m_date" class="label">날짜</label> 
-		<input type="text" name="m_date" id="m_date" readonly><br />
+		<input name="m_date" id="m_date" value="${mVO.m_date }" readonly><br />
 	
 		<label for="m_subject" class="label">주제</label> 
 		<input type="text" name="m_subject" id="m_subject"><br />
