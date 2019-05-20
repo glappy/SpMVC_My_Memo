@@ -10,11 +10,11 @@
 </head>
 <body>
 
-		<p>작성자 : ${mVO.m_auth}<br />
-		<p>날짜 : ${mVO.m_date}<br />
-		<p>주제 : ${mVO.m_subject}<br />
-		<p>내용 : ${mVO.m_text}<br />
-		<p>사진 : ${mVO.m_photo}<br />
+		<p>작성자 : ${memoVO.m_auth}<br />
+		<p>날짜 : ${memoVO.m_date}<br />
+		<p>주제 : ${memoVO.m_subject}<br />
+		<p>내용 : ${memoVO.m_text}<br />
+		<p>사진 : ${memoVO.m_photo}<br />
 
 </body>
 </html>

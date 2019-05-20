@@ -1,12 +1,9 @@
 package com.glappy.memo.controller;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -24,10 +21,10 @@ public class MemoController {
 	}
 
 	@RequestMapping(value = "/memo_write", method = RequestMethod.POST)
-	public String memo_write(@ModelAttribute("memoVO") MemoVO memoVO, Model model) {
+	public String memo_write(MemoVO memoVO, Model model) {
 		MemoVO mVO = new MemoVO();
 		log.debug(mVO.toString());
-		model.addAttribute("mVO",mVO);
+		model.addAttribute("mVO", mVO);
 		return "memo_write";
 	}
 
@@ -38,16 +35,15 @@ public class MemoController {
 
 	@RequestMapping(value = "/memo_view", method = RequestMethod.POST, 
 			produces = "text/html;charset=UTF-8")
-	public String memo_list(@ModelAttribute MemoVO memoVO,Model model) {
-		MemoVO mVO = new MemoVO();
-		log.debug(mVO.toString());
-		
-		LocalDateTime sdf=LocalDateTime.now();
-		String m_date=String.valueOf(sdf);
-		
-		mVO.setM_date(m_date);
+	public String memo_view(MemoVO memoVO, Model model, String str) {
+		log.debug("내가만든코드:"+memoVO.toString());
 
-		model.addAttribute("mVO",mVO);
+		LocalDateTime sdf = LocalDateTime.now();
+		String m_date = String.valueOf(sdf);
+
+		memoVO.setM_date(m_date);
+
+		model.addAttribute("memoVO", memoVO);
 		return "memo_view";
 	}
 }
