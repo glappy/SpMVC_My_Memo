@@ -14,7 +14,6 @@ public class MemoSQL {
 				.INTO_COLUMNS("m_photo").INTO_VALUES("#{m_photo}");
 		return sql.toString();
 	}
-
 	public String memo_update() {
 		SQL sql = new SQL()
 				.UPDATE("tbl_memo")

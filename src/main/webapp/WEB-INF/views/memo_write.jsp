@@ -37,7 +37,7 @@
 </script>
 </head>
 <body>
-	<form action="/tele/memo_view" method="POST">
+	<form action="/tele/memo_write" method="POST">
 	<fieldset> 
 		<legend>메모작성</legend>
 		
