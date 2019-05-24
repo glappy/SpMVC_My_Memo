@@ -2,6 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+	<!-- Multiple annotations found at this line:
+	- schema_reference.4: Failed to read schema document 
+	'https://maven.apache.org/maven-v4_0_0.xsd', 
+	
+	because 1) could not find the document; 2) the document could not be read; 
+	3) the root element of the document is not <xsd:schema>.- cvc-elt.1: 
+	Cannot find the declaration of element 'project'. -->
+	
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.biz</groupId>
 	<artifactId>Memo</artifactId>
