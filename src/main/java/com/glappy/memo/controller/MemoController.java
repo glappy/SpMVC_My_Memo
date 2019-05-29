@@ -1,10 +1,12 @@
 package com.glappy.memo.controller;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -27,13 +29,16 @@ public class MemoController {
 
 	@RequestMapping(value = "/memo_write", method = RequestMethod.POST)
 	public String memo_write(MemoVO memoVO, Model model) {
-		MemoVO mVO = new MemoVO();
-		mVO=memoDao.selectAll();
-		log.debug(mVO.toString());
-		model.addAttribute("mVO", mVO);
-		return "memo_write";
+		int ret= memoDao.insert(memoVO);
+		return "redirect:memo_list";
 	}
 
+	@RequestMapping(value="/memo_list",method=RequestMethod.GET)
+	public String memo_list(Model model) {
+		List<MemoVO> mList=memoDao.selectAll();
+		model.addAttribute("MLIST",mList);
+		return "memo_list";
+	}
 	@RequestMapping(value = "/memo_view", method = RequestMethod.GET)
 	public String memo_list() {
 		return "memo_view";
@@ -51,5 +56,10 @@ public class MemoController {
 
 		model.addAttribute("memoVO", memoVO);
 		return "memo_view";
+	}
+	@RequestMapping(value = "/memo_view/{id}", method = RequestMethod.POST)
+	public String memo_write(@PathVariable long id) {
+		int ret= memoDao.delete(id);
+		return "redirect:memo_list";
 	}
 }

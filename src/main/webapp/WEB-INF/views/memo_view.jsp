@@ -9,12 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 		<p>작성자 : ${memoVO.m_auth}<br />
 		<p>날짜 : ${memoVO.m_date}<br />
 		<p>주제 : ${memoVO.m_subject}<br />
 		<p>내용 : ${memoVO.m_text}<br />
 		<p>사진 : ${memoVO.m_photo}<br />
-
+		<button>삭제</button>
 </body>
 </html>
