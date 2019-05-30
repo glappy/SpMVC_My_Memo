@@ -57,8 +57,8 @@ public class MemoController {
 		model.addAttribute("memoVO", memoVO);
 		return "memo_view";
 	}
-	@RequestMapping(value = "/memo_view/{id}", method = RequestMethod.POST)
-	public String memo_write(@PathVariable long id) {
+	@RequestMapping(value = "/memo_list", method = RequestMethod.POST)
+	public String memo_list(long id) {
 		int ret= memoDao.delete(id);
 		return "redirect:memo_list";
 	}

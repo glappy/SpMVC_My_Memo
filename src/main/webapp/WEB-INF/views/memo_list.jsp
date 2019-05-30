@@ -6,6 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+$(function(){
+	 $(document).ready(function(){
+	        $('button').click(function(){
+	          $('td').remove()
+	        } )
+	      } )
+</script>
 </head>
 <body>
 	<table>
@@ -25,7 +33,7 @@
 			<td>${memoVO.m_subject}</td>
 			<td>${memoVO.m_text}</td>
 			<td>${memoVO.m_photo}</td>
-			<td><a href="memo_view/${memoVO.id}">삭제</a></td>
+			<td><button>삭제</button></td>
 		</tr>
 	</c:forEach>
 		</table>
