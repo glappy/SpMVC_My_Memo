@@ -11,10 +11,12 @@ import com.glappy.memo.model.MemoVO;
 
 public interface MemoDao {
 
-	@Select("select * from tbl_memo")
+	@Select("select * from tbl_memo order by id")
 	public List<MemoVO> selectAll();
+	
 	@Select("select * from tbl_memo where id=#{id}")
-	public String findById(long id);
+	public MemoVO findById(long id);
+	
 	@Delete("delete from tbl_memo where id=#{id}")
 	public int delete(long id);
 	@InsertProvider(type=MemoSQL.class, method="memo_insert")

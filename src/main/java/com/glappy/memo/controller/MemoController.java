@@ -40,7 +40,9 @@ public class MemoController {
 		return "memo_list";
 	}
 	@RequestMapping(value = "/memo_view", method = RequestMethod.GET)
-	public String memo_list() {
+	public String memo_view(long id,Model model) {
+		MemoVO vo = memoDao.findById(id);
+		model.addAttribute("memoVO",vo);
 		return "memo_view";
 	}
 
@@ -57,8 +59,8 @@ public class MemoController {
 		model.addAttribute("memoVO", memoVO);
 		return "memo_view";
 	}
-	@RequestMapping(value = "/memo_list", method = RequestMethod.POST)
-	public String memo_list(long id) {
+	@RequestMapping(value = "/memo_delete", method = RequestMethod.GET)
+	public String memo_delete(long id) {
 		int ret= memoDao.delete(id);
 		return "redirect:memo_list";
 	}

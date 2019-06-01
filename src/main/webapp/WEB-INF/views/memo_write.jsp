@@ -40,9 +40,6 @@
 	<form action="/tele/memo_write" method="POST">
 	<fieldset> 
 		<legend>메모작성</legend>
-		
-		<label for="id" class="label">ID</label> 
-		<input type="text" name="id" id="id"><br />
 	
 		<label for="m_auth" class="label">작성자</label> 
 		<input type="text" name="m_auth" id="m_auth"><br />
