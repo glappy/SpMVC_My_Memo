@@ -8,12 +8,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+
 	header{
 		font-size:3rem;
 		font-family:algerian;
 		padding:1rem;
 		height:3rem;
-		background:;
+		background-image:linear-gradient(to bottom right, #ff1493, #ffd700, #00bfff);
 		text-align:center;
 		justify-content:center;
 	}
@@ -22,34 +23,49 @@
 		background-repeat:repeat;
 		cursor:url("click.png");
 	}
-	h1{
+	p{
+		float:right;
+		width:70%;
 		font-family:french script mt;
+		text-align:center;
+		font-size:4rem;
+		font-weight:bold;
 	}
-	nav {
+	nav{
+		display:inline-block;
+		float:left;
+		width:20%;
 		font-family: sans-serif;
-		font-size: 1.2rem;
+		padding:0.2rem;
+		font-size:1.2rem;
+		background-color:#90ee90;
+		height:100%;
+		padding:2rem;
+		font-weight:bold;
+		text-align:center;
 	}
 		
 	#nav1:hover {
-		font-size: 1.3rem;
-		font-weight: bold;
+		background-color:#fafad2;
+		padding:1rem 3rem;
+		font-weight:bold;
+		text-align:center;
 	}
-	
 	#nav2:hover {
-		font-size: 1.3rem;
-		font-weight: bold;
+		background-color:#fafad2;
+		padding:1rem 3rem;
+		font-weight:bold;
+		text-align:center;
 	}
 </style>
 </head>
 
 <header>Welcome</header>
 <body>
-	<center>
-	<h1>Choose What You Want &#9786;</h1>
+	<p>Choose What You Want &#9786;</p>
 		<nav>
-			<a href="/tele/memo_write" id="nav1">메모장</a> 
+			<a href="/tele/memo_write" id="nav1">메모장</a><br/><br/>
 			<a href="/tele/memo_list" id="nav2">메모보기</a>
 		</nav>
-	</center>
 </body>
 </html>
