@@ -28,7 +28,7 @@ public class MemoController {
 
 	@RequestMapping(value = "/memo_write", method = RequestMethod.POST)
 	public String memo_write(MemoVO memoVO, Model model) {
-		int ret= memoService.insert(memoVO);
+		memoService.insert(memoVO);
 		return "redirect:memo_list";
 	}
 
@@ -60,7 +60,7 @@ public class MemoController {
 	}
 	@RequestMapping(value = "/memo_delete", method = RequestMethod.GET)
 	public String memo_delete(long id) {
-		int ret= memoService.delete(id);
+		memoService.delete(id);
 		return "redirect:memo_list";
 	}
 }
