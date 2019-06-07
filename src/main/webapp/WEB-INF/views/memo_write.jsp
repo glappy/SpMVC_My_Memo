@@ -33,8 +33,6 @@
 		font-size:1.2rem;
 	}
 </style>
-<script>
-</script>
 </head>
 <body>
 	<form action="/tele/memo_write" method="POST">

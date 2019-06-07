@@ -1,6 +1,9 @@
 package com.glappy.memo.controller;
 
-import java.time.LocalDateTime;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +16,7 @@ import com.glappy.memo.model.MemoVO;
 import com.glappy.memo.service.MemoService;
 
 import lombok.extern.slf4j.Slf4j;
+import oracle.sql.DATE;
 
 @Controller
 @Slf4j
@@ -29,6 +33,12 @@ public class MemoController {
 	@RequestMapping(value = "/memo_write", method = RequestMethod.POST)
 	public String memo_write(MemoVO memoVO, Model model) {
 		memoService.insert(memoVO);
+		
+		LocalDate date=LocalDate.now();
+		LocalTime time=LocalTime.now();
+		String strDate=String.valueOf(date)+String.valueOf(time);
+		memoVO.setM_date(strDate);
+		model.addAttribute("DATE",memoVO.getM_date());
 		return "redirect:memo_list";
 	}
 
@@ -49,11 +59,6 @@ public class MemoController {
 			produces = "text/html;charset=UTF-8")
 	public String memo_view(MemoVO memoVO, Model model, String str) {
 		log.debug("내가만든코드:"+memoVO.toString());
-
-		LocalDateTime sdf = LocalDateTime.now();
-		String m_date = String.valueOf(sdf);
-
-		memoVO.setM_date(m_date);
 
 		model.addAttribute("memoVO", memoVO);
 		return "memo_view";

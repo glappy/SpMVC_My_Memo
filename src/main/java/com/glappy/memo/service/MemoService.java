@@ -1,5 +1,6 @@
 package com.glappy.memo.service;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.glappy.memo.mapper.MemoDao;
 import com.glappy.memo.model.MemoVO;
+
+import oracle.sql.DATE;
 
 @Service
 public class MemoService{

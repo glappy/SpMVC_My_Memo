@@ -45,13 +45,13 @@
 		text-align:center;
 	}
 		
-	#nav1:hover {
+	.nav1:hover {
 		background-color:#fafad2;
 		padding:1rem 3rem;
 		font-weight:bold;
 		text-align:center;
 	}
-	#nav2:hover {
+	.nav2:hover {
 		background-color:#fafad2;
 		padding:1rem 3rem;
 		font-weight:bold;
@@ -64,8 +64,8 @@
 <body>
 	<p>Choose What You Want &#9786;</p>
 		<nav>
-			<a href="/tele/memo_write" id="nav1">메모장</a><br/><br/>
-			<a href="/tele/memo_list" id="nav2">메모보기</a>
+			<a href="/tele/memo_write" class="nav1">메모장</a><br/><br/>
+			<a href="/tele/memo_list" class="nav2">메모보기</a>
 		</nav>
 </body>
 </html>
