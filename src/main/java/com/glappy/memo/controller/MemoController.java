@@ -38,7 +38,7 @@ public class MemoController {
 		LocalTime time=LocalTime.now();
 		String strDate=String.valueOf(date)+String.valueOf(time);
 		memoVO.setM_date(strDate);
-		model.addAttribute("DATE",memoVO.getM_date());
+		model.addAttribute("memoVO",memoVO);
 		return "redirect:memo_list";
 	}
 

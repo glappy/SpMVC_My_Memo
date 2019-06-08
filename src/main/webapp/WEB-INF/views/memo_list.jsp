@@ -12,11 +12,7 @@
 			$(".m_view").click(function() {
 				let id = $(this).attr("data-id")
 				location.href="/tele/memo_view?id=" + id
-			
 			})
-
-		
-		
 		})
 	})
 </script>
