@@ -33,6 +33,10 @@
 		font-size:1.2rem;
 	}
 </style>
+<script>
+	document.getElementById('m_date').value
+	= new Date().toISOString().slice()
+</script>
 </head>
 <body>
 	<form action="/tele/memo_write" method="POST">
@@ -43,7 +47,7 @@
 		<input type="text" name="m_auth" id="m_auth"><br />
 	
 		<label for="m_date" class="label">날짜</label> 
-		<input type="text" name="m_date" id="m_date" value="${memoVO}"><br />
+		<input type="text" name="m_date" id="m_date" value="${strDate}"><br />
 	
 		<label for="m_subject" class="label">주제</label> 
 		<input type="text" name="m_subject" id="m_subject"><br />

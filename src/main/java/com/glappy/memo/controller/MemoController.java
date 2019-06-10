@@ -26,19 +26,18 @@ public class MemoController {
 	MemoService memoService;
 	
 	@RequestMapping(value = "/memo_write", method = RequestMethod.GET)
-	public String memo_write() {
+	public String memo_write(Model model) {
+		LocalDate date=LocalDate.now();
+		LocalTime time=LocalTime.now();
+		String strDate=String.valueOf(date)+"   "+String.valueOf(time);
+		model.addAttribute("strDate",strDate);
+
 		return "memo_write";
 	}
 
 	@RequestMapping(value = "/memo_write", method = RequestMethod.POST)
 	public String memo_write(MemoVO memoVO, Model model) {
 		memoService.insert(memoVO);
-		
-		LocalDate date=LocalDate.now();
-		LocalTime time=LocalTime.now();
-		String strDate=String.valueOf(date)+String.valueOf(time);
-		memoVO.setM_date(strDate);
-		model.addAttribute("memoVO",memoVO);
 		return "redirect:memo_list";
 	}
 
@@ -58,8 +57,7 @@ public class MemoController {
 	@RequestMapping(value = "/memo_view", method = RequestMethod.POST, 
 			produces = "text/html;charset=UTF-8")
 	public String memo_view(MemoVO memoVO, Model model, String str) {
-		log.debug("내가만든코드:"+memoVO.toString());
-
+		log.info("내가만든코드:"+memoVO.toString());
 		model.addAttribute("memoVO", memoVO);
 		return "memo_view";
 	}
