@@ -1,9 +1,5 @@
 package com.glappy.memo.controller;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +12,6 @@ import com.glappy.memo.model.MemoVO;
 import com.glappy.memo.service.MemoService;
 
 import lombok.extern.slf4j.Slf4j;
-import oracle.sql.DATE;
 
 @Controller
 @Slf4j
@@ -26,17 +21,12 @@ public class MemoController {
 	MemoService memoService;
 	
 	@RequestMapping(value = "/memo_write", method = RequestMethod.GET)
-	public String memo_write(Model model) {
-		LocalDate date=LocalDate.now();
-		LocalTime time=LocalTime.now();
-		String strDate=String.valueOf(date)+"   "+String.valueOf(time);
-		model.addAttribute("strDate",strDate);
-
+	public String memo_write() {
 		return "memo_write";
 	}
 
 	@RequestMapping(value = "/memo_write", method = RequestMethod.POST)
-	public String memo_write(MemoVO memoVO, Model model) {
+	public String memo_write(MemoVO memoVO) {
 		memoService.insert(memoVO);
 		return "redirect:memo_list";
 	}

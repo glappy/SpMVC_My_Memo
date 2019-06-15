@@ -46,9 +46,6 @@
 		<label for="m_auth" class="label">작성자</label> 
 		<input type="text" name="m_auth" id="m_auth"><br />
 	
-		<label for="m_date" class="label">날짜</label> 
-		<input type="text" name="m_date" id="m_date" value="${strDate}"><br />
-	
 		<label for="m_subject" class="label">주제</label> 
 		<input type="text" name="m_subject" id="m_subject"><br />
 	
